@@ -1,0 +1,79 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#ff242932"
+    tools:context="com.example.main.scalpel.FindImageActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <EditText
+            android:layout_width="325sp"
+            android:layout_height="40sp"
+            android:id="@+id/editText"
+            android:background="#ffffffff"
+            android:layout_marginTop="50sp"
+            android:layout_marginLeft="15sp"
+            android:singleLine="true"
+            android:hint="@string/TextBoxDescription"
+            android:textColor="#ff000000" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:layout_alignBottom="@+id/editText"
+            android:layout_toRightOf="@+id/editText"
+            android:tint="#ff36c7ec"
+            android:layout_alignTop="@+id/editText"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="startSpeechIntent"/>
+    </RelativeLayout>
+
+    <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:keepScreenOn="true" android:textColor="#33b5e5"
+        android:textStyle="bold" android:textSize="50sp" android:gravity="center"
+        android:text="@string/dummy_content"
+        android:visibility="invisible" />
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:background="@color/black_overlay" android:orientation="horizontal"
+            tools:ignore="UselessParent"
+            android:layout_marginTop="100sp">
+
+            <Button android:id="@+id/findImageID" style="?metaButtonBarButtonStyle"
+                android:layout_width="40sp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="@string/findImage"
+                android:textColor="#ff36c7ec"
+                android:nestedScrollingEnabled="false"
+                android:singleLine="false"
+                android:onClick="findImageHandler" />
+
+            <Button
+                style="?metaButtonBarButtonStyle"
+                android:id="@+id/homePageFromCamID"
+                android:layout_width="40sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/HomePage"
+                android:textColor="#ff36c7ec"
+                android:onClick="homePageHandler" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+</FrameLayout>

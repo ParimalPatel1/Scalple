@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Scalpel</string>
+    <string name="appTitle">Scalpel</string>
+    <string name="captureImage">Capture Image</string>
+    <string name="findImage">Find Image</string>
+    <string name="title_activity_camera">CameraActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="takePicture">Take Picture</string>
+    <string name="HomePage">Main Menu</string>
+    <string name="title_activity_image_match">ImageMatchActivity</string>
+    <string name="NextBestMatch">Find Next Match</string>
+    <string name="title_activity_find_image">FindImageActivity</string>
+    <string name="title_activity_image_found">ImageFoundActivity</string>
+    <string name="bestMatch">Best Match</string>
+    <string name="TextBoxDescription">Which image do you want?</string>
+    <string name="SearchText">Searching</string>
+    <string name="MatchingText">Matching Image With...</string>
+    <string name="tryAgain">Try Again</string>
+    <string name="ImageNotFound">Image not found.</string>
+
+</resources>

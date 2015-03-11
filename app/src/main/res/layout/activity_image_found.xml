@@ -1,0 +1,75 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#ff242932"
+    tools:context="com.example.main.scalpel.ImageFoundActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:keepScreenOn="true" android:textColor="#33b5e5"
+        android:textStyle="bold" android:textSize="50sp" android:gravity="center"
+        android:text="@string/dummy_content"
+        android:visibility="invisible" />
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay" android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <Button android:id="@+id/tryAgainID" style="?metaButtonBarButtonStyle"
+                android:layout_width="40sp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="@string/tryAgain"
+                android:textColor="#ff36c7ec"
+                android:nestedScrollingEnabled="false"
+                android:singleLine="false"
+                android:onClick="tryAgainHandler" />
+
+            <Button
+                style="?metaButtonBarButtonStyle"
+                android:id="@+id/homePageFromCamID"
+                android:layout_width="40sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/HomePage"
+                android:textColor="#ff36c7ec"
+                android:onClick="homePageHandler" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@android:drawable/ic_delete"
+            android:layout_marginLeft="80sp"
+            android:layout_marginTop="300sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/ImageNotFound"
+            android:id="@+id/textView2"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_centerHorizontal="true"
+            android:singleLine="false"
+            android:textColor="#ffffffff"
+            android:textSize="25sp"
+            android:layout_toRightOf="@+id/imageView" />
+    </RelativeLayout>
+
+</FrameLayout>

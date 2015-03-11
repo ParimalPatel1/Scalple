@@ -1,0 +1,66 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#ff242932"
+    tools:context="com.example.main.scalpel.FullscreenActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="350sp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="10sp"
+        android:layout_marginLeft="10sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Description Here"
+            android:id="@+id/textView"
+            android:textStyle="normal"
+            android:typeface="sans" />
+    </RelativeLayout>
+
+    <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:keepScreenOn="true" android:textColor="#ff36c7ec"
+        android:textStyle="bold" android:textSize="50sp"
+        android:text="@string/appTitle"
+        android:gravity="top|center"
+        android:singleLine="true"
+        android:layout_marginTop="10sp" />
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_gravity="left|bottom"
+            android:background="@color/black_overlay" android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <Button android:id="@+id/takePictureID" style="?metaButtonBarButtonStyle"
+                android:layout_width="40sp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="@string/takePicture"
+                android:textColor="#ff36c7ec"
+                android:nestedScrollingEnabled="false"
+                android:singleLine="false"
+                android:onClick="takePictureHandler" />
+
+            <Button
+                style="?metaButtonBarButtonStyle"
+                android:id="@+id/findImageID"
+                android:layout_width="40sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/findImage"
+                android:textColor="#ff36c7ec"
+                android:onClick="findImageHandler" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>
