@@ -9,51 +9,14 @@ import android.speech.RecognitionListener;
 /**
  * Created by Parimal on 3/10/2015.
  */
-public class KeywordSpotting extends Activity implements RecognitionListener{
+public class KeywordSpotting {
+    //Global variables and constance
 
-    @Override
-    public void onReadyForSpeech(Bundle params) {
 
-    }
+    //private/protected methods
 
-    @Override
-    public void onBeginningOfSpeech() {
 
-    }
+    //public methods
 
-    @Override
-    public void onRmsChanged(float rmsdB) {
-
-    }
-
-    @Override
-    public void onBufferReceived(byte[] buffer) {
-
-    }
-
-    @Override
-    public void onEndOfSpeech() {
-
-    }
-
-    @Override
-    public void onError(int error) {
-
-    }
-
-    @Override
-    public void onResults(Bundle results) {
-
-    }
-
-    @Override
-    public void onPartialResults(Bundle partialResults) {
-
-    }
-
-    @Override
-    public void onEvent(int eventType, Bundle params) {
-
-    }
 
 }

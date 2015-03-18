@@ -43,30 +43,23 @@ public class SpeechRecognition {
             @Override
             public void onReadyForSpeech(Bundle params) {
                 Log.e("Speech","onReadyForSpeech");
-
             }
-
             @Override
             public void onBeginningOfSpeech() {
                 Log.e("Speech","onBeginningOfSpeech");
-
             }
-
             @Override
             public void onRmsChanged(float rmsdB) {
                 //Log.e("Speech","Sound Level: "+rmsdB+"db");
             }
-
             @Override
             public void onBufferReceived(byte[] buffer) {
                 Log.e("Speech","onBufferReceived");
             }
-
             @Override
             public void onEndOfSpeech() {
                 Log.e("Speech","onEndOfSpeech");
             }
-
             @Override
             public void onError(int error) {
                 switch(error){
@@ -113,13 +106,11 @@ public class SpeechRecognition {
                     Log.e("Speech","There is nothing in string array");
                 }
             }
-
             @Override
             public void onPartialResults(Bundle partialResults) {
                 Log.e("Speech","onPartialResults");
                 Toast.makeText(context,"PartialResults is available",Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onEvent(int eventType, Bundle params) {
                 Log.e("Speech","onEvent");

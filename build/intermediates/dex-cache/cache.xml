@@ -2,6 +2,34 @@
 <items version="2" >
 
     <item
+        jar="C:\Users\Parimal\Desktop\Scalple\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\Parimal\Desktop\Scalple\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-5785bd7b851a2a9b5f60ace0588d76075caf3d5e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Parimal\Desktop\Scalple\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\Parimal\Desktop\Scalple\app\build\intermediates\pre-dexed\debug\classes-49bb660f7907ab5ceb61418059ec2ada7f71f556.jar" />
+    </item>
+    <item
+        jar="C:\Users\Parimal\Desktop\Scalple\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\Parimal\Desktop\Scalple\app\build\intermediates\pre-dexed\debug\classes-15ef0fa2854adfb4f7f7cfbf0b4f100922239ae8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Parimal\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\Parimal\Desktop\Scalple\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-0158fd9bce9776142ccf311801325b709ce439e0.jar" />
+    </item>
+    <item
         jar="C:\Android SDK\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -9,18 +37,18 @@
         <dex dex="C:\Users\Parimal\Dropbox\Scalpel\Scalpel\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-119c2d1180e30b9cd7cbc9de8204ad151c853f65.jar" />
     </item>
     <item
-        jar="C:\Users\Parimal\Dropbox\Scalpel\Scalpel\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="C:\Users\Parimal\Dropbox\Scalpel\Scalpel\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-50eab97e8beb89b3df7c8a75930d4dff11c0da72.jar" />
-    </item>
-    <item
         jar="C:\Users\Parimal\Dropbox\Scalpel\Scalpel\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
         <dex dex="C:\Users\Parimal\Dropbox\Scalpel\Scalpel\app\build\intermediates\pre-dexed\debug\classes-0c2aad534299a9870cdf24e93ef730642ff5fd3f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Parimal\Dropbox\Scalpel\Scalpel\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\Parimal\Dropbox\Scalpel\Scalpel\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-50eab97e8beb89b3df7c8a75930d4dff11c0da72.jar" />
     </item>
     <item
         jar="C:\Users\Parimal\Dropbox\Scalpel\Scalpel\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
