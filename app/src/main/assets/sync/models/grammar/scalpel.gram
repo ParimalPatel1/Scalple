@@ -1,18 +1,12 @@
 #JSGF V1.0;
 
-grammar digits;
+grammar scalpel;
 
-<digit> = oh    |
-          zero  |
-          one   |
-          two   |
-          three |
-          four  |
-          five  |
-          six   |
-          seven |
-          eight |
-          nine  |
-          scalpel;
+public <basicCmd> = <startPolite> <command> <endPolite>;
+  <command> = <action> <object>;
+  <action> = /10/ open |/2/ close |/1/ delete |/1/ move;
+  <object> = [the | a] (window | file | menu);
+  <startPolite> = (please | kindly | could you | oh mighty computer) *;
+  <endPolite> = [ please | thanks | thank you ];
 
-public <digits> = <digit>+;
+public <scalpel> = <basicCmd>+;

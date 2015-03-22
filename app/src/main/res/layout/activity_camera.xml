@@ -1,49 +1,75 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="#ff242932"
-    tools:context="com.example.main.scalpel.CameraActivity">
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <SurfaceView
+        android:id="@+id/preview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="100dip"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:background="#A000">
+        <ImageButton
+            android:layout_width='match_parent'
+            android:layout_height="wrap_content"
+            android:id="@+id/ImageTest"
+            />
+        <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
 
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
+            <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@color/black_overlay" android:orientation="horizontal"
+                tools:ignore="UselessParent">
+                <Button android:id="@+id/processImageID" style="?metaButtonBarButtonStyle"
+                    android:layout_width="40sp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Process Image"
+                    android:textColor="#ff36c7ec"
+                    android:nestedScrollingEnabled="false"
+                    android:singleLine="false"
+                    android:onClick="processImageHandler"
+                    />
+                <Button android:id="@+id/captureImageID" style="?metaButtonBarButtonStyle"
+                    android:layout_width="40sp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="@string/captureImage"
+                    android:textColor="#ff36c7ec"
+                    android:nestedScrollingEnabled="false"
+                    android:singleLine="false"
+                    android:onClick="captureImageHandler" />
 
-    <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
-        android:layout_height="match_parent" android:keepScreenOn="true" android:textColor="#33b5e5"
-        android:textStyle="bold" android:textSize="50sp" android:gravity="center"
-        android:text="@string/dummy_content"
-        android:visibility="invisible" />
+                <Button
+                    style="?metaButtonBarButtonStyle"
+                    android:id="@+id/HomePageFromCamID"
+                    android:layout_width="40sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/HomePage"
+                    android:textColor="#ff36c7ec"
+                    android:onClick="homePageHandler" />
+            </LinearLayout>
 
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
+        </FrameLayout>
+    </RelativeLayout>
+</RelativeLayout>
 
-    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
 
-        <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:background="@color/black_overlay" android:orientation="horizontal"
-            tools:ignore="UselessParent">
 
-            <Button android:id="@+id/captureImageID" style="?metaButtonBarButtonStyle"
-                android:layout_width="40sp" android:layout_height="wrap_content"
-                android:layout_weight="1" android:text="@string/captureImage"
-                android:textColor="#ff36c7ec"
-                android:nestedScrollingEnabled="false"
-                android:singleLine="false"
-                android:onClick="captureImageHandler" />
 
-            <Button
-                style="?metaButtonBarButtonStyle"
-                android:id="@+id/HomePageFromCamID"
-                android:layout_width="40sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/HomePage"
-                android:textColor="#ff36c7ec"
-                android:onClick="homePageHandler" />
-        </LinearLayout>
 
-    </FrameLayout>
 
-</FrameLayout>
+
+
+
+
+
+
+
+
+

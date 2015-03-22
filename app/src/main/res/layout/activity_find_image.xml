@@ -32,8 +32,7 @@
             android:tint="#ff36c7ec"
             android:layout_alignTop="@+id/editText"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:onClick="startSpeechIntent"/>
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
     <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"

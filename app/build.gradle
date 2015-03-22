@@ -17,7 +17,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dexOptions{
+        javaMaxHeapSize "4g"
+    }
 }
+
 
 ant.importBuild 'assets.xml'
 preBuild.dependsOn(list, checksum)
@@ -29,4 +33,6 @@ dependencies {
     compile 'com.android.support:support-v4:21.0.3'
     compile files('C:/Users/Parimal/Desktop/Scalple/libs/pocketsphinx-android-0.8-nolib.jar')
     compile files('libs/pocketsphinx-android-0.8-nolib.jar')
+    compile files('libs/pocketsphinx-android-5prealpha-nolib.jar')
+    compile files('libs/scalpel-1.0-SNAPSHOT-jar-with-dependencies.jar')
 }

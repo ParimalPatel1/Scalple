@@ -20,5 +20,10 @@
     <string name="MatchingText">Matching Image With...</string>
     <string name="tryAgain">Try Again</string>
     <string name="ImageNotFound">Image not found.</string>
+    <string name="NEW_SEARCH">New Search</string>
+    <string name="NEXT_MATCH">Next Match</string>
+    <string name="PROCESS_IMAGE">Process Image</string>
+    <string name="NEW_PICTURE">New Picture</string>
+
 
 </resources>
