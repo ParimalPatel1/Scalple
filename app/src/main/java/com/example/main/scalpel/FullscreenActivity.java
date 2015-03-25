@@ -182,7 +182,4 @@ public class FullscreenActivity extends Activity  {
         super.onResume();
         Utility.context = this;
     }
-
-
-
 }
