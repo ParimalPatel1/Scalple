@@ -1,6 +1,8 @@
 package parimal;
 
+import android.app.Activity;
 import android.content.Context;
+import android.speech.SpeechRecognizer;
 
 import com.example.main.scalpel.CameraActivity;
 import com.example.main.scalpel.FindImageActivity;
@@ -19,14 +21,16 @@ import java.util.HashMap;
 public class Utility {
     private KeywordSpotting kws_instance;
     private static Utility instance = null;
-    public static Context context;
+    public static Context context = null;
     FullscreenActivity fullscreen = null;
     FindImageActivity findImage = null;
     public CameraActivity cameraActivity = null;
     public ImageFoundActivity foundImageActivity = null;
     public ImageFoundTextActivity foundImageText;
     public ImageMatchActivity imageMatch;
-
+    private SpeechRecognizer sr;
+    private edu.cmu.pocketsphinx.SpeechRecognizer recognizer;
+    static SpeechListener speechListenerInstance;
     public Utility(){
 
     }
@@ -62,4 +66,19 @@ public class Utility {
     public ImageFoundActivity getFoundImageActivity() {
         return foundImageActivity;
     }
+
+    public Activity getActiveActivity(){
+        return null;
+    }
+    public static Utility getInstance() {
+        if(instance == null){
+            instance = new Utility();
+        }
+        return instance;
+    }
+    public void stopAllSpeech(){
+        kws_instance.stopAll();
+        kws_instance.andSpeRec.stopAll();
+    }
+
 }

@@ -25,14 +25,15 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView2"
+            android:id="@+id/microphone"
             android:src="@android:drawable/ic_btn_speak_now"
             android:layout_alignBottom="@+id/editText"
             android:layout_toRightOf="@+id/editText"
             android:tint="#ff36c7ec"
             android:layout_alignTop="@+id/editText"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:onClick="microphoneClick"/>
     </RelativeLayout>
 
     <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"

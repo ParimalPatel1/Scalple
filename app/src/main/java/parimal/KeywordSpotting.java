@@ -26,7 +26,7 @@ public class KeywordSpotting implements edu.cmu.pocketsphinx.RecognitionListener
     public static String value = "scalpel";
     public static File assetDirectory;
     static Toast toast;
-    private static SpeechListener andSpeRec;
+    public static SpeechListener andSpeRec;
     //HashMap<String,String> keywords;
     //Implementation of singleton pattern--------------------
     private KeywordSpotting(){}
@@ -88,6 +88,9 @@ public class KeywordSpotting implements edu.cmu.pocketsphinx.RecognitionListener
                 .getRecognizer();
         recognizer.addListener(this);
         recognizer.addKeyphraseSearch(key,value);
+        //-----------------------------------------
+
+        //-----------------------------------------
     }
     //--------------------------------------------------------
     @Override
@@ -110,8 +113,7 @@ public class KeywordSpotting implements edu.cmu.pocketsphinx.RecognitionListener
                 toast = Toast.makeText(context, result, LENGTH_SHORT);
                 toast.show();
                 Log.e("Scalpel","Recognizer Shutdown");
-                recognizer.stop();
-                recognizer.shutdown();
+                stopAll();
                 Log.e("Scalpel","Starting Recognizer Intent");
                 andSpeRec.startSpeechR();
             }
@@ -132,5 +134,10 @@ public class KeywordSpotting implements edu.cmu.pocketsphinx.RecognitionListener
     @Override
     public void onTimeout() {
 
+    }
+    public void stopAll(){
+        recognizer.stop();
+        recognizer.cancel();
+        recognizer.shutdown();
     }
 }

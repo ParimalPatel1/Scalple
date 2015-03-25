@@ -25,7 +25,7 @@ import java.util.ArrayList;
  * Created by Parimal on 3/21/2015.
  */
 public class SpeechListener implements RecognitionListener {
-    Utility instance;
+    Utility instance = Utility.getInstance();
     private Toast text = KeywordSpotting.toast;
     private String TAKE_PICTURE;
     private String FIND_IMAGE;
@@ -39,11 +39,8 @@ public class SpeechListener implements RecognitionListener {
 
     private SpeechRecognizer sr;
     private Intent speechIntent;
-    private Context context = Utility.context;
     public SpeechListener(Context context){
-        instance = Utility.getInstance(context);
         sr = SpeechRecognizer.createSpeechRecognizer(context);
-        this.context = context;
         TAKE_PICTURE = context.getString(R.string.takePicture).toLowerCase();
         FIND_IMAGE = context.getString(R.string.findImage).toLowerCase();
         MAIN_MENU = context.getString(R.string.HomePage).toLowerCase();
@@ -57,7 +54,7 @@ public class SpeechListener implements RecognitionListener {
         Log.e("SpeechCmd", str);
         if(text != null)
             text.cancel();
-        text = Toast.makeText(context,str,Toast.LENGTH_SHORT);
+        text = Toast.makeText(Utility.context,str,Toast.LENGTH_SHORT);
         text.show();
     }
     public void FIND_IMAGE_ACTION(){
@@ -71,28 +68,24 @@ public class SpeechListener implements RecognitionListener {
             Button picture = (Button)(instance.fullscreen.findViewById(R.id.takePictureID));
             picture.performClick();
         }
-
     }
     public void NEW_SEARCH_ACTION(){
         if(instance.foundImageText != null){
             Button new_search = (Button)(instance.foundImageText.findViewById(R.id.tryAgainID));
             new_search.performClick();
         }
-
     }
     public void SEARCH_ACTION(){
         if(instance.findImage != null){
             Button search = (Button)(instance.findImage.findViewById(R.id.findImageID));
             search.performClick();
         }
-
     }
     public void CAPTURE_IMAGE_ACTION(){
         if(instance.cameraActivity != null){
             Button capture_image = (Button)(instance.cameraActivity.findViewById(R.id.captureImageID));
             capture_image.performClick();
         }
-
         /*
         if(instance.cameraActivity != null){
             instance.cameraActivity
@@ -120,13 +113,13 @@ public class SpeechListener implements RecognitionListener {
             next_match = (Button)(instance.foundImageActivity.findViewById(R.id.findBetterID));
             next_match.performClick();
         }
-        //
         if(instance.foundImageText != null){
             next_match = (Button)(instance.foundImageText.findViewById(R.id.findBetterID));
             next_match.performClick();
         }
     }
     public void MAIN_MENU_ACTION(){
+        Log.e("SpeechTest",Utility.context.toString());
         Button main_menu;
         if(instance.findImage != null){
             main_menu = (Button)(instance.findImage.findViewById(R.id.homePageFromCamID));
@@ -183,14 +176,18 @@ public class SpeechListener implements RecognitionListener {
     public void startSpeechR(){
         if(sr != null)
             sr.destroy();
-        sr = SpeechRecognizer.createSpeechRecognizer(context);
+        sr = SpeechRecognizer.createSpeechRecognizer(Utility.context);
         speechIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         speechIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, "parimal");
         speechIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,"en-US");
         speechIntent.putExtra(RecognizerIntent.EXTRA_PROMPT,"Speech Recognition");
         sr.startListening(speechIntent);
         sr.setRecognitionListener(this);
-        Log.e("SpeechTest",sr.toString());
+    }
+    public void stopAll(){
+        sr.stopListening();
+        sr.cancel();
+        sr.destroy();
     }
     public void restartKeywordSpotting(){
         Log.e("Speech","Restarting Sphinx");
@@ -201,13 +198,6 @@ public class SpeechListener implements RecognitionListener {
             e.printStackTrace();
         }
         KeywordSpotting.getInstance(KeywordSpotting.context).restart_KeywordSpotting(KeywordSpotting.key);
-    }
-    public void restartRecognition(){
-        Log.e("SpeechTest",sr.toString());
-        sr.destroy();
-        sr = null;
-        startSpeechR();
-        Log.e("Speech","restart recognizer");
     }
     @Override
     public void onReadyForSpeech(Bundle params) {

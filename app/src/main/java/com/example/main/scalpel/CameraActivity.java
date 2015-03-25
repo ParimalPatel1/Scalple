@@ -87,6 +87,11 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback, 
         super.onPause();
         mCamera.stopPreview();
     }
+    @Override
+    public void onResume() {
+        super.onResume();
+        Utility.context = this;
+    }
 
     @Override
     public void onDestroy() {

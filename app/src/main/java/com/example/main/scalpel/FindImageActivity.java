@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import parimal.KeywordSpotting;
 import parimal.SpeechListener;
+import parimal.SpeechListenerMicrophone;
 import parimal.Utility;
 
 
@@ -36,6 +37,11 @@ public class FindImageActivity extends Activity {
         instance.setFindImageActivity(this);
         //===============================================================================
     }
+    @Override
+    public void onResume() {
+        super.onResume();
+        Utility.context = this;
+    }
     public void homePageHandler(View v) {
         finish();
     }
@@ -46,6 +52,11 @@ public class FindImageActivity extends Activity {
         ImageFoundTextActivity.latestSearch = terms;
         Intent rateIntent = new Intent(this, ImageFoundTextActivity.class);
         startActivityForResult(rateIntent, FIND_IMAGE_FROM_TEXT);
+    }
+    SpeechListenerMicrophone speech;
+    public void microphoneClick(View v){
+        speech = new SpeechListenerMicrophone(this);
+        speech.startRecognition();
     }
     @Override
     public void onActivityResult(int requestCode, int RESULT_CODE, Intent data) {

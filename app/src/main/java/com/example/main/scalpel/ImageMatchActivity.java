@@ -28,7 +28,11 @@ public class ImageMatchActivity extends Activity {
         instance.imageMatch= this;
         //===============================================================================
     }
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        Utility.context = this;
+    }
     public void homePageHandler(View v)
     {
        finish();

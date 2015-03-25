@@ -80,5 +80,9 @@ public class ImageFoundActivity extends Activity {
         FullscreenActivity.needToTakeNewPicture=true;
         finish();
     }
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        Utility.context = this;
+    }
 }

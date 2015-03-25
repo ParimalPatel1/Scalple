@@ -177,7 +177,11 @@ public class FullscreenActivity extends Activity  {
         {resultsCapped[i]=results[i];}
         ImageFoundActivity.matches = resultsCapped;
     }
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        Utility.context = this;
+    }
 
 
 

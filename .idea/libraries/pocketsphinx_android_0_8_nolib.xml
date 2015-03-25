@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="pocketsphinx-android-0.8-nolib">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/pocketsphinx-android-0.8-nolib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../Scalple/libs/pocketsphinx-android-0.8-nolib.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
